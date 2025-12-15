@@ -40,13 +40,13 @@
 @layer components {
 	/* Glass morphism effect */
 	.glass {
-		@apply backdrop-blur-xl bg-surface/80 border border-outline/20;
+		@apply backdrop-blur-xl bg-surface/90 border border-outline/30;
 		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 	}
 
 	.glass-dark {
-		@apply backdrop-blur-xl bg-surface-dark/80 border border-outline/10;
-		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+		@apply backdrop-blur-xl bg-surface-dark/90 border border-outline-dark/50;
+		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 	}
 
 	/* Gradient text */
@@ -110,18 +110,96 @@
 
 /* Dark mode styles */
 .dark {
-	@apply bg-background-dark text-on-background-dark;
+	background-color: #0A0A0A;
+	color: #F0F0F0;
 }
 
 .dark .glass {
-	@apply bg-surface-dark/80 border-outline/10;
-	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	background-color: rgba(26, 26, 26, 0.9);
+	border-color: rgba(42, 42, 42, 0.5);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
 }
 
 .dark .btn-primary {
-	@apply bg-primary text-on-primary;
+	background-color: #F5D899;
+	color: #1A1A1A;
 }
 
 .dark .btn-outline {
-	@apply border-primary text-primary hover:bg-primary hover:text-on-primary;
+	border-color: #F5D899;
+	color: #F5D899;
+}
+
+.dark .btn-outline:hover {
+	background-color: #F5D899;
+	color: #1A1A1A;
+}
+
+.dark .gradient-text {
+	background-image: linear-gradient(to right, #F5D899, #FFC04D, #F5D899);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	background-size: 200% 200%;
+}
+
+/* Surface colors in dark mode */
+.dark .bg-surface {
+	background-color: #1A1A1A !important;
+}
+
+.dark .bg-background {
+	background-color: #0A0A0A !important;
+}
+
+.dark .text-on-background {
+	color: #F0F0F0 !important;
+}
+
+.dark .text-on-surface {
+	color: #F0F0F0 !important;
+}
+
+.dark .border-outline {
+	border-color: #2A2A2A !important;
+}
+
+.dark .text-primary {
+	color: #F5D899 !important;
+}
+
+.dark .border-primary {
+	border-color: #F5D899 !important;
+}
+
+.dark .bg-primary {
+	background-color: #F5D899 !important;
+}
+
+.dark .text-on-primary {
+	color: #1A1A1A !important;
+}
+
+.dark .text-success {
+	color: #5CD682 !important;
+}
+
+.dark .bg-success {
+	background-color: #5CD682 !important;
+}
+
+.dark .text-warning {
+	color: #FFC04D !important;
+}
+
+.dark .bg-warning {
+	background-color: #FFC04D !important;
+}
+
+.dark .text-inactive {
+	color: #A0A0A0 !important;
+}
+
+.dark .bg-inactive {
+	background-color: #404040 !important;
 }

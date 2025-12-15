@@ -7,55 +7,55 @@ export default {
       colors: {
         primary: {
           DEFAULT: '#EFCC80',
-          dark: '#EFCC80',
+          dark: '#F5D899',
         },
         'on-primary': {
-          DEFAULT: '#333333',
-          dark: '#333333',
+          DEFAULT: '#1A1A1A',
+          dark: '#1A1A1A',
         },
         background: {
           DEFAULT: '#F3F3F3',
-          dark: '#121212',
+          dark: '#0A0A0A',
         },
         'on-background': {
-          DEFAULT: '#333333',
-          dark: '#E6E7EB',
+          DEFAULT: '#1A1A1A',
+          dark: '#F0F0F0',
         },
         surface: {
-          DEFAULT: '#FAFAFA',
-          dark: '#1f1f1f',
+          DEFAULT: '#FFFFFF',
+          dark: '#1A1A1A',
         },
         'on-surface': {
-          DEFAULT: '#333333',
-          dark: '#E6E7EB',
+          DEFAULT: '#1A1A1A',
+          dark: '#F0F0F0',
         },
         success: {
           DEFAULT: '#46B56C',
-          dark: '#46B56C',
+          dark: '#5CD682',
         },
         error: {
           DEFAULT: '#D64C4C',
-          dark: '#D64C4C',
+          dark: '#FF6B6B',
         },
         'on-error': {
           DEFAULT: '#FFFFFF',
-          dark: '#FFFFFF',
+          dark: '#1A1A1A',
         },
         warning: {
           DEFAULT: '#FFAB2E',
-          dark: '#FFAB2E',
+          dark: '#FFC04D',
         },
         inactive: {
           DEFAULT: '#D0D0D0',
-          dark: '#5E5E5E',
+          dark: '#404040',
         },
         'on-inactive': {
-          DEFAULT: '#1f1f1f',
-          dark: '#E6E7EB',
+          DEFAULT: '#666666',
+          dark: '#A0A0A0',
         },
         outline: {
-          DEFAULT: '#EEEEEE',
-          dark: '#EEEEEE',
+          DEFAULT: '#E0E0E0',
+          dark: '#2A2A2A',
         },
       },
       fontFamily: {
@@ -101,5 +101,30 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme }) {
+      const colors = theme('colors');
+      const darkUtilities = {};
+
+      // Generate dark mode color utilities
+      Object.keys(colors).forEach((colorName) => {
+        if (typeof colors[colorName] === 'object' && colors[colorName].dark) {
+          // For backgrounds
+          darkUtilities[`.dark .bg-${colorName}`] = {
+            backgroundColor: colors[colorName].dark,
+          };
+          // For text
+          darkUtilities[`.dark .text-${colorName}`] = {
+            color: colors[colorName].dark,
+          };
+          // For borders
+          darkUtilities[`.dark .border-${colorName}`] = {
+            borderColor: colors[colorName].dark,
+          };
+        }
+      });
+
+      addUtilities(darkUtilities);
+    },
+  ],
 };
