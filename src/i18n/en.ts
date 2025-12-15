@@ -6,6 +6,7 @@ export const en: Translations = {
 		features: "Features",
 		pricing: "Pricing",
 		download: "Download",
+		contact: "Contact",
 	},
 	hero: {
 		badge: "v2.0 NOW AVAILABLE",

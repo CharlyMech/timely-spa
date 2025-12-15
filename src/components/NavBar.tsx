@@ -4,96 +4,49 @@ import { getTranslations, languages, type Language } from '@/i18n';
 
 export default function NavBar() {
 	const { theme, language, toggleTheme, setLanguage } = useAppStore();
-	const [isScrolled, setIsScrolled] = useState(false);
+	// const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const t = getTranslations(language);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 20);
-		};
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		setIsScrolled(window.scrollY > 20);
+	// 	};
 
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	// 	window.addEventListener('scroll', handleScroll);
+	// 	return () => window.removeEventListener('scroll', handleScroll);
+	// }, []);
 
 	const navItems = [
 		{ label: t.nav.home, href: '#home' },
 		{ label: t.nav.features, href: '#features' },
 		{ label: t.nav.download, href: '#download' },
+		{ label: t.nav.contact, href: '#contact' },
 	];
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-2' : 'py-4'
-				}`}
+			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4`}
 		>
 			<div className="container-custom">
 				<div
-					className={`relative transition-all duration-500 rounded-full ${isScrolled
-						? theme === 'dark'
-							? 'glass-dark shadow-2xl'
-							: 'glass shadow-lg'
-						: 'bg-transparent'
-						}`}
+					className={`relative transition-all duration-500 rounded-full ${theme === 'dark' ? 'glass-dark shadow-2xl' : 'glass shadow-lg'}`}
 				>
 					<div className="flex items-center justify-between px-6 py-3">
-						{/* Logo */}
 						<a
 							href="#home"
 							className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105"
 						>
 							<div className="relative">
 								<div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-glow" />
-								<svg
-									width="40"
-									height="40"
-									viewBox="0 0 40 40"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									className="relative"
-								>
-									<circle cx="10" cy="10" r="3" fill="#EFCC80" />
-									<circle cx="20" cy="15" r="3" fill="#EFCC80" />
-									<circle cx="30" cy="10" r="3" fill="#EFCC80" />
-									<circle cx="15" cy="25" r="3" fill="#EFCC80" />
-									<circle cx="25" cy="30" r="3" fill="#EFCC80" />
-									<line
-										x1="10"
-										y1="10"
-										x2="20"
-										y2="15"
-										stroke="#EFCC80"
-										strokeWidth="2"
-										strokeLinecap="round"
-									/>
-									<line
-										x1="20"
-										y1="15"
-										x2="30"
-										y2="10"
-										stroke="#EFCC80"
-										strokeWidth="2"
-										strokeLinecap="round"
-									/>
-									<line
-										x1="20"
-										y1="15"
-										x2="15"
-										y2="25"
-										stroke="#EFCC80"
-										strokeWidth="2"
-										strokeLinecap="round"
-									/>
-									<line
-										x1="20"
-										y1="15"
-										x2="25"
-										y2="30"
-										stroke="#EFCC80"
-										strokeWidth="2"
-										strokeLinecap="round"
-									/>
+								<svg width="40" height="25" viewBox="0 0 2814 1595" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1240.27 353.402C1337.9 451.033 1337.9 609.324 1240.27 706.955C1142.63 804.587 984.343 804.587 886.712 706.955C789.081 609.324 789.081 451.033 886.712 353.402C984.343 255.771 1142.63 255.771 1240.27 353.402ZM975.1 618.567C1023.92 667.383 1103.06 667.383 1151.88 618.567C1200.69 569.752 1200.69 490.606 1151.88 441.79C1103.06 392.975 1023.92 392.975 975.1 441.79C926.285 490.606 926.285 569.752 975.1 618.567Z" fill="#EFCC80" />
+									<path d="M531.037 1064.04C628.668 1161.68 628.668 1319.97 531.037 1417.6C433.406 1515.23 275.115 1515.23 177.484 1417.6C79.8527 1319.97 79.8527 1161.68 177.484 1064.04C275.115 966.413 433.406 966.413 531.037 1064.04ZM265.872 1329.21C314.688 1378.02 393.833 1378.02 442.649 1329.21C491.464 1280.39 491.464 1201.25 442.649 1152.43C393.833 1103.62 314.688 1103.62 265.872 1152.43C217.057 1201.25 217.057 1280.39 265.872 1329.21Z" fill="#EFCC80" />
+									<rect x="398.808" y="1107.18" width="750" height="125" transform="rotate(-45 398.808 1107.18)" fill="#EFCC80" />
+									<path d="M2636.14 176.777C2733.77 274.408 2733.77 432.699 2636.14 530.33C2538.51 627.961 2380.22 627.961 2282.59 530.33C2184.96 432.699 2184.96 274.408 2282.59 176.777C2380.22 79.1456 2538.51 79.1456 2636.14 176.777ZM2370.97 441.942C2419.79 490.757 2498.94 490.757 2547.75 441.942C2596.57 393.126 2596.57 313.981 2547.75 265.165C2498.94 216.349 2419.79 216.349 2370.97 265.165C2322.16 313.981 2322.16 393.126 2370.97 441.942Z" fill="#EFCC80" />
+									<path d="M1926.91 887.419C2024.54 985.05 2024.54 1143.34 1926.91 1240.97C1829.28 1338.6 1670.99 1338.6 1573.36 1240.97C1475.73 1143.34 1475.73 985.05 1573.36 887.419C1670.99 789.788 1829.28 789.788 1926.91 887.419ZM1661.75 1152.58C1710.56 1201.4 1789.71 1201.4 1838.52 1152.58C1887.34 1103.77 1887.34 1024.62 1838.52 975.807C1789.71 926.992 1710.56 926.992 1661.75 975.807C1612.93 1024.62 1612.93 1103.77 1661.75 1152.58Z" fill="#EFCC80" />
+									<rect x="1794.68" y="930.552" width="750" height="125" transform="rotate(-45 1794.68 930.552)" fill="#EFCC80" />
+									<rect x="1209.83" y="553.537" width="600" height="125" transform="rotate(40 1209.83 553.537)" fill="#EFCC80" />
 								</svg>
 							</div>
 							<span className="text-xl font-display font-bold tracking-tight">
@@ -118,7 +71,7 @@ export default function NavBar() {
 						{/* Actions */}
 						<div className="flex items-center space-x-4">
 							{/* Language Switcher */}
-							<div className="hidden sm:flex items-center space-x-2 bg-surface dark:bg-surface-dark rounded-full p-1">
+							<div className="hidden sm:flex items-center space-x-2 bg-outline/40 dark:bg-outline-dark/40 rounded-full p-1">
 								{languages.map((lang) => (
 									<button
 										key={lang.code}
@@ -136,12 +89,12 @@ export default function NavBar() {
 							{/* Theme Toggle */}
 							<button
 								onClick={toggleTheme}
-								className="p-2.5 rounded-full bg-surface dark:bg-surface-dark hover:bg-primary/10 transition-all duration-300 group"
+								className="p-2.5 rounded-full hover:bg-outline/40 dark:hover:bg-outline-dark/40 transition-all duration-300 group"
 								aria-label="Toggle theme"
 							>
 								{theme === 'light' ? (
 									<svg
-										className="w-5 h-5 transition-transform duration-300 group-hover:rotate-180"
+										className="w-5 h-5 transition-transform duration-300"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="currentColor"
@@ -155,7 +108,7 @@ export default function NavBar() {
 									</svg>
 								) : (
 									<svg
-										className="w-5 h-5 transition-transform duration-300 group-hover:rotate-180"
+										className="w-5 h-5 transition-transform duration-300"
 										fill="none"
 										viewBox="0 0 24 24"
 										stroke="currentColor"

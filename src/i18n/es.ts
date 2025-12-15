@@ -4,6 +4,7 @@ export const es = {
 		features: "Características",
 		pricing: "Precios",
 		download: "Descargar",
+		contact: "Contacto",
 	},
 	hero: {
 		badge: "v2.0 AHORA DISPONIBLE",
