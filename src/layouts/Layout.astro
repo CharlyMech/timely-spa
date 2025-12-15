@@ -1,0 +1,33 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'Timely - Time tracking reimagined' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Timely transforms how SMEs track attendance and productivity. Seamlessly integrated, beautifully designed, and built for modern teams." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Time tracking reimagined for modern teams" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="Time tracking reimagined for modern teams" />
+    
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
