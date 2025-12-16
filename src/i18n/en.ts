@@ -13,10 +13,10 @@ export const en: Translations = {
 		title: "Time tracking",
 		titleHighlight: "reimagined",
 		subtitle:
-			"Timely transforms how SMEs track attendance and productivity. Seamlessly integrated, beautifully designed, and built for modern teams.",
+			"Timely offers SMEs a flexible and personalized time tracking system, tailored to each company and ready to run effortlessly.",
 		cta: {
 			download: "Download APK",
-			demo: "Live Demo",
+			demo: "Schedule a Demo",
 		},
 		stats: {
 			teams: "Professional teams",

@@ -8,13 +8,13 @@ export const es = {
 	},
 	hero: {
 		badge: "v2.0 AHORA DISPONIBLE",
-		title: "Gestión del tiempo",
+		title: "Gestión horaria",
 		titleHighlight: "reinventada",
 		subtitle:
-			"Timely transforma cómo las PYMEs gestionan la asistencia y productividad del personal. Integración perfecta, diseñado de forma elegante, y creado para equipos modernos.",
+			"Timely ofrece a las PYMEs un sistema de registro horario flexible y personalizado, adaptado a cada empresa y listo para funcionar sin esfuerzo.",
 		cta: {
 			download: "Descargar APK",
-			demo: "Ver Demo en Vivo",
+			demo: "Agenda una demo",
 		},
 		stats: {
 			teams: "Equipos profesionales",
