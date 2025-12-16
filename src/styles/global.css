@@ -51,7 +51,7 @@
 
 	/* Gradient text */
 	.gradient-text {
-		@apply bg-gradient-to-r from-primary via-warning to-primary bg-clip-text text-transparent;
+		@apply bg-gradient-to-r from-primary via-[#FFC04D] to-primary bg-clip-text text-transparent;
 		background-size: 200% 200%;
 		animation: gradient-shift 3s ease infinite;
 	}
@@ -110,8 +110,8 @@
 
 /* Dark mode styles */
 .dark {
-	background-color: #0A0A0A;
-	color: #F0F0F0;
+	background-color: #0a0a0a;
+	color: #f0f0f0;
 }
 
 .dark .glass {
@@ -121,22 +121,22 @@
 }
 
 .dark .btn-primary {
-	background-color: #F5D899;
-	color: #1A1A1A;
+	background-color: #f5d899;
+	color: #1a1a1a;
 }
 
 .dark .btn-outline {
-	border-color: #F5D899;
-	color: #F5D899;
+	border-color: #f5d899;
+	color: #f5d899;
 }
 
 .dark .btn-outline:hover {
-	background-color: #F5D899;
-	color: #1A1A1A;
+	background-color: #f5d899;
+	color: #1a1a1a;
 }
 
 .dark .gradient-text {
-	background-image: linear-gradient(to right, #F5D899, #FFC04D, #F5D899);
+	background-image: linear-gradient(to right, #f5d899, #ffc04d, #f5d899);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
@@ -145,59 +145,43 @@
 
 /* Surface colors in dark mode */
 .dark .bg-surface {
-	background-color: #1A1A1A !important;
+	background-color: #1a1a1a !important;
 }
 
 .dark .bg-background {
-	background-color: #0A0A0A !important;
+	background-color: #0a0a0a !important;
 }
 
 .dark .text-on-background {
-	color: #F0F0F0 !important;
+	color: #f0f0f0 !important;
 }
 
 .dark .text-on-surface {
-	color: #F0F0F0 !important;
+	color: #f0f0f0 !important;
 }
 
 .dark .border-outline {
-	border-color: #2A2A2A !important;
+	border-color: #2a2a2a !important;
 }
 
 .dark .text-primary {
-	color: #F5D899 !important;
+	color: #f5d899 !important;
 }
 
 .dark .border-primary {
-	border-color: #F5D899 !important;
+	border-color: #f5d899 !important;
 }
 
 .dark .bg-primary {
-	background-color: #F5D899 !important;
+	background-color: #f5d899 !important;
 }
 
 .dark .text-on-primary {
-	color: #1A1A1A !important;
-}
-
-.dark .text-success {
-	color: #5CD682 !important;
-}
-
-.dark .bg-success {
-	background-color: #5CD682 !important;
-}
-
-.dark .text-warning {
-	color: #FFC04D !important;
-}
-
-.dark .bg-warning {
-	background-color: #FFC04D !important;
+	color: #1a1a1a !important;
 }
 
 .dark .text-inactive {
-	color: #A0A0A0 !important;
+	color: #a0a0a0 !important;
 }
 
 .dark .bg-inactive {

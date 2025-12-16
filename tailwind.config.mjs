@@ -7,44 +7,44 @@ export default {
       colors: {
         primary: {
           DEFAULT: '#EFCC80',
-          dark: '#F5D899',
+          dark: '#EFCC80',
         },
         'on-primary': {
-          DEFAULT: '#1A1A1A',
-          dark: '#1A1A1A',
+          DEFAULT: '#333333',
+          dark: '#333333',
         },
         background: {
           DEFAULT: '#F3F3F3',
-          dark: '#0A0A0A',
+          dark: '#121212',
         },
         'on-background': {
-          DEFAULT: '#1A1A1A',
-          dark: '#F0F0F0',
+          DEFAULT: '#333333',
+          dark: '#E6E7EB',
         },
         surface: {
-          DEFAULT: '#FFFFFF',
-          dark: '#1A1A1A',
+          DEFAULT: '#FAFAFA',
+          dark: '#1F1F1F',
         },
         'on-surface': {
-          DEFAULT: '#1A1A1A',
-          dark: '#F0F0F0',
+          DEFAULT: '#333333',
+          dark: '#E6E7EB',
         },
-        success: {
-          DEFAULT: '#46B56C',
-          dark: '#5CD682',
-        },
-        error: {
-          DEFAULT: '#D64C4C',
-          dark: '#FF6B6B',
-        },
-        'on-error': {
-          DEFAULT: '#FFFFFF',
-          dark: '#1A1A1A',
-        },
-        warning: {
-          DEFAULT: '#FFAB2E',
-          dark: '#FFC04D',
-        },
+        // success: {
+        //   DEFAULT: '#46B56C',
+        //   dark: '#5CD682',
+        // },
+        // error: {
+        //   DEFAULT: '#D64C4C',
+        //   dark: '#FF6B6B',
+        // },
+        // 'on-error': {
+        //   DEFAULT: '#FFFFFF',
+        //   dark: '#1A1A1A',
+        // },
+        // warning: {
+        //   DEFAULT: '#FFAB2E',
+        //   dark: '#FFC04D',
+        // },
         inactive: {
           DEFAULT: '#D0D0D0',
           dark: '#404040',
