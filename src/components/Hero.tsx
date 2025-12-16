@@ -1,6 +1,7 @@
 import { useAppStore } from '@/store/appStore';
 import { getTranslations } from '@/i18n';
 import VersionBadge from './VersionBadge';
+import { Download } from 'lucide-react';
 
 export default function Hero() {
 	const { language, theme } = useAppStore();
@@ -46,19 +47,7 @@ export default function Hero() {
 								>
 									<span className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-primary bg-[length:200%_100%] animate-[gradient-shift_3s_ease_infinite] opacity-0 group-hover:opacity-100 transition-opacity" />
 									<span className="relative flex items-center space-x-2">
-										<svg
-											className="w-5 h-5"
-											fill="none"
-											viewBox="0 0 24 24"
-											stroke="currentColor"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-											/>
-										</svg>
+										<Download className="w-5 h-5" />
 										<span>{t.hero.cta.download}</span>
 									</span>
 								</a>
@@ -66,7 +55,8 @@ export default function Hero() {
 									href="#features"
 									className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 								>
-									{t.hero.cta.demo}
+									<Download className="w-5 h-5" />
+									<span>{t.hero.cta.demo}</span>
 								</a>
 							</div>
 						</div>
@@ -112,19 +102,7 @@ export default function Hero() {
 							>
 								<span className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-primary bg-[length:200%_100%] animate-[gradient-shift_3s_ease_infinite] opacity-0 group-hover:opacity-100 transition-opacity" />
 								<span className="relative flex items-center space-x-2">
-									<svg
-										className="w-5 h-5"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											strokeWidth={2}
-											d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-										/>
-									</svg>
+									<Download className="w-5 h-5" />
 									<span>{t.hero.cta.download}</span>
 								</span>
 							</a>
