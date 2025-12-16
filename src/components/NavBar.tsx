@@ -1,21 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useAppStore } from '@/store/appStore';
 import { getTranslations, languages, type Language } from '@/i18n';
 
 export default function NavBar() {
 	const { theme, language, toggleTheme, setLanguage } = useAppStore();
-	// const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const t = getTranslations(language);
-
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 		setIsScrolled(window.scrollY > 20);
-	// 	};
-
-	// 	window.addEventListener('scroll', handleScroll);
-	// 	return () => window.removeEventListener('scroll', handleScroll);
-	// }, []);
 
 	const navItems = [
 		{ label: t.nav.home, href: '#home' },
@@ -70,7 +60,6 @@ export default function NavBar() {
 
 						{/* Actions */}
 						<div className="flex items-center space-x-4">
-							{/* Language Switcher */}
 							<div className="hidden sm:flex items-center space-x-2 bg-outline/40 dark:bg-outline-dark/40 rounded-full p-1">
 								{languages.map((lang) => (
 									<button
@@ -86,7 +75,6 @@ export default function NavBar() {
 								))}
 							</div>
 
-							{/* Theme Toggle */}
 							<button
 								onClick={toggleTheme}
 								className="p-2.5 rounded-full hover:bg-outline/40 dark:hover:bg-outline-dark/40 transition-all duration-300 group"

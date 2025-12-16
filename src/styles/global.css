@@ -18,23 +18,6 @@
 		@apply bg-background text-on-background font-sans antialiased;
 		transition: background-color 0.3s ease, color 0.3s ease;
 	}
-
-	/* Custom scrollbar */
-	::-webkit-scrollbar {
-		@apply w-2;
-	}
-
-	::-webkit-scrollbar-track {
-		@apply bg-background;
-	}
-
-	::-webkit-scrollbar-thumb {
-		@apply bg-primary rounded-full;
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		@apply bg-primary/80;
-	}
 }
 
 @layer components {
