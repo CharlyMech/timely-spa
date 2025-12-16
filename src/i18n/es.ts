@@ -25,7 +25,7 @@ export const es = {
 		title: "¿Por qué elegir",
 		titleHighlight: "Timely?",
 		subtitle:
-			"Las tarjetas de fichaje tradicionales y hojas de cálculo son propensas a errores. Timely aporta precisión, estilo y facilidad a la gestión de la fuerza laboral.",
+			"Las tarjetas de fichaje tradicionales y hojas de cálculo son propensas a errores. Timely aporta precisión, estilo y facilidad a la gestión del registro horario con unos pocos clicks.",
 		items: {
 			security: {
 				title: "Seguridad Confiable",

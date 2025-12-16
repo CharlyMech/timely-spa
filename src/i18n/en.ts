@@ -27,7 +27,7 @@ export const en: Translations = {
 		title: "Why choose",
 		titleHighlight: "Timely?",
 		subtitle:
-			"Traditional punch cards and spreadsheets are prone to errors. Timely brings precision, style, and ease to workforce management.",
+			"Traditional time cards and spreadsheets are prone to errors. Timely brings accuracy, style, and ease to time tracking with just a few clicks.",
 		items: {
 			security: {
 				title: "Reliable Security",
