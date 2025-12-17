@@ -9,6 +9,7 @@ interface CardProps {
 	className?: string;
 	hoverEffect?: boolean;
 	animationDelay?: number;
+	backgroundColor?: 'surface' | 'background';
 }
 
 export default function Card({
@@ -18,9 +19,14 @@ export default function Card({
 	className = '',
 	hoverEffect = true,
 	animationDelay = 0,
+	backgroundColor = 'surface',
 }: CardProps) {
-	const baseClasses =
-		'relative h-full p-8 rounded-3xl bg-surface dark:bg-surface-dark border border-outline/20';
+	const bgClasses =
+		backgroundColor === 'background'
+			? 'bg-background dark:bg-background-dark'
+			: 'bg-surface dark:bg-surface-dark';
+
+	const baseClasses = `relative h-full p-8 rounded-3xl ${bgClasses} border border-outline/20`;
 
 	const hoverClasses = hoverEffect
 		? 'transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-primary/50'

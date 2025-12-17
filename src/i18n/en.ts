@@ -9,7 +9,6 @@ export const en: Translations = {
 		contact: "Contact",
 	},
 	hero: {
-		badge: "v2.0 NOW AVAILABLE",
 		title: "Time tracking",
 		titleHighlight: "reimagined",
 		subtitle:
@@ -23,7 +22,6 @@ export const en: Translations = {
 		},
 	},
 	features: {
-		badge: "WHY CHOOSE TIMELY",
 		title: "Why choose",
 		titleHighlight: "Timely?",
 		subtitle:
@@ -47,29 +45,27 @@ export const en: Translations = {
 		},
 	},
 	tech: {
-		badge: "BUILT FOR BUSINESSES",
 		title: "Built with Modern",
 		titleHighlight: "Technologies",
 		items: {
 			frontend: {
-				title: "Frontend Precision",
+				title: "Cross-Platform Interface with Flutter",
 				description:
-					"Cross-platform consistency with 60fps animations. Responsive dashboard built for high-performance rendering.",
+					"Built with Flutter and Riverpod 3.0 for a smooth and reactive experience. Adaptive design that seamlessly adjusts to mobile and tablet devices with light and dark themes.",
 			},
 			backend: {
-				title: "Robust Backend",
+				title: "Scalable Clean Architecture",
 				description:
-					"Secure cloud infrastructure with real-time database sync and automated daily backups for peace of mind.",
+					"Implements Clean Architecture with three well-defined layers. Interchangeable services between mock data for development and Firebase Firestore for production.",
 			},
 			integrations: {
-				title: "Seamless Integrations",
+				title: "Modular and Extensible System",
 				description:
-					"Direct export to major payroll systems, Calendar API connectivity, and instant Slack notifications.",
+					"Architecture ready for future integrations. Clear separation of concerns that facilitates extension with REST APIs, payroll systems, and report exports.",
 			},
 		},
 	},
 	devices: {
-		badge: "AVAILABLE ON ALL",
 		title: "Devices",
 		platforms: {
 			ios: "iOS App",
@@ -79,7 +75,6 @@ export const en: Translations = {
 		},
 	},
 	contact: {
-		badge: "FULL NAME",
 		title: "Get in Touch",
 		subtitle:
 			"Ready to streamline your business? Request a demo or download the app today. Our team is here to help you get started.",

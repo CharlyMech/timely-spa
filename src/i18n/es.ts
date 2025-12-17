@@ -7,7 +7,6 @@ export const es = {
 		contact: "Contacto",
 	},
 	hero: {
-		badge: "v2.0 AHORA DISPONIBLE",
 		title: "Gestión horaria",
 		titleHighlight: "reinventada",
 		subtitle:
@@ -21,7 +20,6 @@ export const es = {
 		},
 	},
 	features: {
-		badge: "POR QUÉ ELEGIR TIMELY",
 		title: "¿Por qué elegir",
 		titleHighlight: "Timely?",
 		subtitle:
@@ -45,29 +43,27 @@ export const es = {
 		},
 	},
 	tech: {
-		badge: "HECHO PARA EMPRESAS",
 		title: "Construido con Tecnologías",
 		titleHighlight: "Modernas",
 		items: {
 			frontend: {
-				title: "Precisión en el Frontend",
+				title: "Interfaz Multiplataforma con Flutter",
 				description:
-					"Consistencia multiplataforma con 60fps de animaciones. Panel receptivo construido para renderizado de alto rendimiento.",
+					"Desarrollado con Flutter y Riverpod 3.0 para una experiencia fluida y reactiva. Diseño adaptativo que se ajusta perfectamente a móviles y tablets con temas claro y oscuro.",
 			},
 			backend: {
-				title: "Backend Robusto",
+				title: "Arquitectura Limpia Escalable",
 				description:
-					"Infraestructura segura en la nube con sincronización de base de datos en tiempo real y copias de seguridad diarias automatizadas para tranquilidad.",
+					"Implementa Clean Architecture con tres capas bien definidas. Servicios intercambiables entre mock data para desarrollo y Firebase Firestore para producción.",
 			},
 			integrations: {
-				title: "Integraciones Fluidas",
+				title: "Sistema Modular y Extensible",
 				description:
-					"Exportación directa a sistemas de nómina mayores, conectividad con API de calendario y notificaciones instantáneas de Slack.",
+					"Arquitectura preparada para integraciones futuras. Separación clara de responsabilidades que facilita la extensión con APIs REST, sistemas de nómina y exportación de reportes.",
 			},
 		},
 	},
 	devices: {
-		badge: "DISPONIBLE EN TODOS LOS",
 		title: "Dispositivos",
 		platforms: {
 			ios: "Aplicación iOS",
@@ -77,7 +73,6 @@ export const es = {
 		},
 	},
 	contact: {
-		badge: "NOMBRE COMPLETO",
 		title: "Ponte en Contacto",
 		subtitle:
 			"¿Listo para agilizar tu negocio? Solicita una demostración o descarga la aplicación hoy. Nuestro equipo está aquí para ayudarte a comenzar.",
