@@ -1,6 +1,7 @@
 import { useAppStore } from '../store/appStore';
 import { getTranslations } from '../i18n';
 import { Lock, BarChart3, Cloud } from 'lucide-react';
+import Card from './Card';
 
 export default function Features() {
 	const { language } = useAppStore();
@@ -45,38 +46,27 @@ export default function Features() {
 				{/* Features Grid */}
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{features.map((feature, index) => (
-						<div
+						<Card
 							key={index}
-							className="group relative"
-							style={{ animationDelay: `${index * 0.2}s` }}
+							variant="feature"
+							icon={feature.icon}
+							animationDelay={index * 0.2}
 						>
-							{/* Card */}
-							<div className="relative h-full p-8 rounded-3xl bg-surface dark:bg-surface-dark border border-outline/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-primary/50 overflow-hidden">
-								{/* Extra Large Background Icon - Behind content with primary color */}
-								<div className="absolute -right-16 -bottom-16 w-64 h-64 z-0 text-primary opacity-[0.08] dark:opacity-[0.04] transition-all duration-700 group-hover:scale-110 group-hover:rotate-12 group-hover:opacity-[0.12] dark:group-hover:opacity-[0.06]">
-									{feature.icon}
-								</div>
+							<div className="space-y-4">
+								{/* Small decorative line */}
+								<div className="w-12 h-1 bg-primary rounded-full" />
 
-								{/* Subtle glow effect on hover */}
-								<div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 dark:to-primary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+								{/* Title */}
+								<h3 className="text-2xl font-display font-bold text-on-background dark:text-on-background-dark">
+									{feature.title}
+								</h3>
 
-								{/* Content - Above the icon */}
-								<div className="relative space-y-4 z-10">
-									{/* Small decorative line */}
-									<div className="w-12 h-1 bg-primary rounded-full" />
-
-									{/* Title */}
-									<h3 className="text-2xl font-display font-bold text-on-background dark:text-on-background-dark">
-										{feature.title}
-									</h3>
-
-									{/* Description */}
-									<p className="text-on-background/70 dark:text-on-background-dark/70 leading-relaxed">
-										{feature.description}
-									</p>
-								</div>
+								{/* Description */}
+								<p className="text-on-background/70 dark:text-on-background-dark/70 leading-relaxed">
+									{feature.description}
+								</p>
 							</div>
-						</div>
+						</Card>
 					))}
 				</div>
 			</div>
