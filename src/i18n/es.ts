@@ -12,8 +12,8 @@ export const es = {
 		subtitle:
 			"Timely ofrece a las PYMEs un sistema de registro horario flexible y personalizado, adaptado a cada empresa y listo para funcionar sin esfuerzo.",
 		cta: {
-			download: "Descargar APK",
-			demo: "Agenda una demo",
+			download: "Descargar Demo",
+			demo: "Agendar Demo",
 		},
 		stats: {
 			teams: "Equipos profesionales",
@@ -64,7 +64,11 @@ export const es = {
 		},
 	},
 	devices: {
-		title: "Dispositivos",
+		title: "y Plataformas",
+		titleHighlight: "Dispositivos",
+		subtitle:
+			"Diseñado para tablets y móviles. Accede desde cualquier dispositivo, en cualquier momento.",
+		badge: "PLATAFORMAS",
 		platforms: {
 			ios: "Aplicación iOS",
 			android: "Aplicación Android",

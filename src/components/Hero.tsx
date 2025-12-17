@@ -53,7 +53,7 @@ export default function Hero() {
 								</a>
 								<a
 									href="#features"
-									className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
+									className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 								>
 									<CalendarCheck className="w-5 h-5" />
 									<span>{t.hero.cta.demo}</span>

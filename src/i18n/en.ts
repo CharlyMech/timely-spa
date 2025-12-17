@@ -14,7 +14,7 @@ export const en: Translations = {
 		subtitle:
 			"Timely offers SMEs a flexible and personalized time tracking system, tailored to each company and ready to run effortlessly.",
 		cta: {
-			download: "Download APK",
+			download: "Download Demo",
 			demo: "Schedule a Demo",
 		},
 		stats: {
@@ -66,7 +66,11 @@ export const en: Translations = {
 		},
 	},
 	devices: {
-		title: "Devices",
+		title: "and Platforms",
+		titleHighlight: "Devices",
+		subtitle:
+			"Designed for tablets and mobile. Access from any device, anytime, anywhere.",
+		badge: "PLATFORMS",
 		platforms: {
 			ios: "iOS App",
 			android: "Android App",
