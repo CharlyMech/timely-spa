@@ -1,7 +1,7 @@
 import { useAppStore } from '@/store/appStore';
 import { getTranslations } from '@/i18n';
 import VersionBadge from './VersionBadge';
-import { Download } from 'lucide-react';
+import { CalendarCheck, Download } from 'lucide-react';
 
 export default function Hero() {
 	const { language, theme } = useAppStore();
@@ -55,7 +55,7 @@ export default function Hero() {
 									href="#features"
 									className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 								>
-									<Download className="w-5 h-5" />
+									<CalendarCheck className="w-5 h-5" />
 									<span>{t.hero.cta.demo}</span>
 								</a>
 							</div>
