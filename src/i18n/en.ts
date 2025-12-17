@@ -72,10 +72,8 @@ export const en: Translations = {
 			"Designed for tablets and mobile. Access from any device, anytime, anywhere.",
 		badge: "PLATFORMS",
 		platforms: {
-			ios: "iOS App",
-			android: "Android App",
-			tablet: "Tablet",
-			web: "Web Portal",
+			ios: "iOS Devices",
+			android: "Android Devices",
 		},
 	},
 	contact: {

@@ -70,10 +70,8 @@ export const es = {
 			"Diseñado para tablets y móviles. Accede desde cualquier dispositivo, en cualquier momento.",
 		badge: "PLATAFORMAS",
 		platforms: {
-			ios: "Aplicación iOS",
-			android: "Aplicación Android",
-			tablet: "Tablet",
-			web: "Portal Web",
+			ios: "Dispositivos iOS",
+			android: "Dispositivos Android",
 		},
 	},
 	contact: {

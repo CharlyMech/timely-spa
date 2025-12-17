@@ -1,5 +1,7 @@
 import { useAppStore } from '@/store/appStore';
 import { getTranslations } from '@/i18n';
+import { Tablet, Monitor, CalendarCheck, ArrowRight } from 'lucide-react';
+import Card from './Card';
 
 export default function Download() {
 	const { language } = useAppStore();
@@ -14,6 +16,7 @@ export default function Download() {
 				</svg>
 			),
 			available: false,
+			downloadUrl: '#',
 		},
 		{
 			name: t.devices.platforms.android,
@@ -23,34 +26,7 @@ export default function Download() {
 				</svg>
 			),
 			available: true,
-		},
-		{
-			name: t.devices.platforms.tablet,
-			icon: (
-				<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={1.5}
-						d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-					/>
-				</svg>
-			),
-			available: true,
-		},
-		{
-			name: t.devices.platforms.web,
-			icon: (
-				<svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth={1.5}
-						d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-					/>
-				</svg>
-			),
-			available: true,
+			downloadUrl: '#', // TODO: Add actual download link
 		},
 	];
 
@@ -65,116 +41,96 @@ export default function Download() {
 			<div className="container-custom relative z-10">
 				{/* Section Header */}
 				<div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-					<div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-surface dark:bg-surface-dark border border-outline/20">
-						<span className="text-xs font-medium tracking-wider text-primary">
-							{t.devices.badge}
-						</span>
-					</div>
 					<h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold">
-						<span className="gradient-text">{t.devices.title}</span>
+						<span className="gradient-text">{t.devices.titleHighlight}</span>
+						{' '}{t.devices.title}
 					</h2>
+					<p className="text-lg text-on-background/70 dark:text-on-background-dark/70 text-balance">
+						{t.devices.subtitle}
+					</p>
 				</div>
 
 				{/* Platforms Grid */}
-				<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+				<div className="flex flex-col md:flex-row gap-6 mb-16 w-full px-6 md:px-0 md:max-w-2xl md:mx-auto">
 					{platforms.map((platform, index) => (
-						<div
+						<Card
 							key={index}
-							className="group relative"
-							style={{ animationDelay: `${index * 0.1}s` }}
-						>
-							<div
-								className={`relative h-full p-8 rounded-3xl border transition-all duration-500 ${
-									platform.available
-										? 'bg-surface dark:bg-surface-dark border-outline/20 hover:scale-105 hover:shadow-xl hover:border-primary/50'
-										: 'bg-surface/50 dark:bg-surface-dark/50 border-outline/10 opacity-50'
+							variant="icon-badge"
+							icon={platform.icon}
+							animationDelay={index * 0.1}
+							hoverEffect={platform.available}
+							iconActive={platform.available}
+							className={`w-full md:flex-1 ${platform.available
+								? ''
+								: 'bg-surface/70 dark:bg-surface-dark/70 border-outline/50 opacity-70 rounded-3xl'
 								}`}
-							>
-								{/* Icon */}
-								<div
-									className={`inline-flex p-4 rounded-2xl mb-4 transition-all duration-500 ${
-										platform.available
-											? 'bg-primary/10 text-primary group-hover:scale-110'
-											: 'bg-inactive/10 text-inactive'
-									}`}
-								>
-									{platform.icon}
+						>
+							<div className="flex flex-col h-full space-y-4">
+								{/* Name with availability indicator */}
+								<div className="flex items-center space-x-2">
+									<h3
+										className={`text-xl font-display font-bold ${platform.available
+											? 'text-success dark:text-success'
+											: 'text-on-background dark:text-on-background-dark'
+											}`}
+									>
+										{platform.name}
+									</h3>
+									{platform.available && (
+										<span className="relative flex h-2 w-2">
+											<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
+											<span className="relative inline-flex rounded-full h-2 w-2 bg-success" />
+										</span>
+									)}
 								</div>
 
-								{/* Name */}
-								<h3 className="text-xl font-display font-bold mb-2">
-									{platform.name}
-								</h3>
+								{/* Spacer to push button to bottom */}
+								<div className="flex-grow" />
 
-								{/* Status badge */}
-								<span
-									className={`inline-flex items-center space-x-1 px-3 py-1 rounded-full text-xs font-medium ${
-										platform.available
-											? 'bg-success/10 text-success'
-											: 'bg-inactive/10 text-inactive'
-									}`}
-								>
-									<span className="relative flex h-2 w-2">
-										{platform.available && (
-											<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
-										)}
-										<span
-											className={`relative inline-flex rounded-full h-2 w-2 ${
-												platform.available ? 'bg-success' : 'bg-inactive'
-											}`}
-										/>
+								{/* Status label or Download link */}
+								{platform.available ? (
+									<a
+										href={platform.downloadUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="w-full inline-flex items-center justify-end space-x-2 text-primary hover:text-primary/80 transition-colors duration-200 font-medium group"
+									>
+										<span>{language === 'es' ? 'Descargar demo' : 'Download demo'}</span>
+										<ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+									</a>
+								) : (
+									<span className="w-full inline-flex items-center justify-center space-x-1.5 text-sm text-inactive">
+										<span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-inactive" />
+										<span>{language === 'es' ? 'Próximamente' : 'Coming Soon'}</span>
 									</span>
-									<span>
-										{platform.available
-											? language === 'es'
-												? 'Disponible'
-												: 'Available'
-											: language === 'es'
-												? 'Próximamente'
-												: 'Coming Soon'}
-									</span>
-								</span>
+								)}
 							</div>
-						</div>
+						</Card>
 					))}
 				</div>
 
-				{/* Download CTA */}
+				{/* CTA */}
 				<div className="max-w-2xl mx-auto text-center space-y-8">
 					<div className="glass dark:glass-dark rounded-3xl p-8 md:p-12 space-y-6">
 						<h3 className="text-3xl md:text-4xl font-display font-bold">
 							{language === 'es'
-								? '¿Listo para empezar?'
-								: 'Ready to get started?'}
+								? '¿Quieres ver Timely en acción?'
+								: 'Want to see Timely in action?'}
 						</h3>
 						<p className="text-lg text-on-background/70 dark:text-on-background-dark/70">
 							{language === 'es'
-								? 'Descarga Timely ahora y transforma la gestión del tiempo de tu equipo.'
-								: "Download Timely now and transform your team's time management."}
+								? 'Contacta para una demo en vivo y una toma de requisitos personalizada. Timely se adapta a tu empresa para crear una solución hecha a medida.'
+								: "Contact for a live demo and personalized requirements gathering. Timely adapts to your business to create a tailor-made solution."}
 						</p>
 
 						{/* Download buttons */}
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
+						<div className="flex flex-col sm:flex-row space-x-2 justify-center">
 							<a
 								href="#"
-								className="group relative inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
+								className="group relative inline-flex items-center justify-center gap-4 px-8 py-4 bg-primary text-on-primary rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
 							>
-								<span className="absolute inset-0 bg-gradient-to-r from-primary via-warning to-primary bg-[length:200%_100%] animate-[gradient-shift_3s_ease_infinite] opacity-0 group-hover:opacity-100 transition-opacity" />
-								<span className="relative flex items-center space-x-2">
-									<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-										<path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.5 11.5 0 00-8.94 0L5.65 5.67c-.19-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85l1.84 3.18C2.92 11.03 1 14.22 1 17.8h22c0-3.58-1.92-6.77-5.4-8.32zM8.06 15.2c-.66 0-1.2-.54-1.2-1.2 0-.66.54-1.2 1.2-1.2.66 0 1.2.54 1.2 1.2 0 .66-.54 1.2-1.2 1.2zm7.88 0c-.66 0-1.2-.54-1.2-1.2 0-.66.54-1.2 1.2-1.2.66 0 1.2.54 1.2 1.2 0 .66-.54 1.2-1.2 1.2z" />
-									</svg>
-									<span>
-										{language === 'es' ? 'Descargar para Android' : 'Download for Android'}
-									</span>
-								</span>
-							</a>
-
-							<a
-								href="#"
-								className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
-							>
-								{language === 'es' ? 'Ver Demo' : 'View Demo'}
+								<CalendarCheck className="w-5 h-5" />
+								<span>{language === 'es' ? 'Contacta para una demo' : 'Contact for a Demo'}</span>
 							</a>
 						</div>
 					</div>

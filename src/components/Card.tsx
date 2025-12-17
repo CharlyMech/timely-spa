@@ -10,6 +10,7 @@ interface CardProps {
 	hoverEffect?: boolean;
 	animationDelay?: number;
 	backgroundColor?: 'surface' | 'background';
+	iconActive?: boolean;
 }
 
 export default function Card({
@@ -20,6 +21,7 @@ export default function Card({
 	hoverEffect = true,
 	animationDelay = 0,
 	backgroundColor = 'surface',
+	iconActive = true,
 }: CardProps) {
 	const bgClasses =
 		backgroundColor === 'background'
@@ -57,15 +59,21 @@ export default function Card({
 	}
 
 	if (variant === 'icon-badge') {
+		const iconClasses = iconActive
+			? 'bg-primary/10 text-primary group-hover:scale-110'
+			: 'bg-inactive/10 text-inactive';
+
 		return (
 			<div
-				className="group relative"
+				className={`group relative h-full ${className}`}
 				style={{ animationDelay: `${animationDelay}s` }}
 			>
-				<div className={`${baseClasses} ${hoverClasses} ${className}`}>
+				<div className={`${baseClasses} ${hoverClasses}`}>
 					{/* Icon Badge at top */}
 					{icon && (
-						<div className="inline-flex p-4 rounded-2xl mb-4 bg-primary/10 text-primary transition-all duration-500 group-hover:scale-110">
+						<div
+							className={`inline-flex p-4 rounded-2xl mb-4 transition-all duration-500 ${iconClasses}`}
+						>
 							{icon}
 						</div>
 					)}
