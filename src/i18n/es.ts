@@ -77,18 +77,14 @@ export const es = {
 	contact: {
 		title: "Ponte en Contacto",
 		subtitle:
-			"¿Listo para agilizar tu negocio? Solicita una demostración o descarga la aplicación hoy. Nuestro equipo está aquí para ayudarte a comenzar.",
+			"¿Listo para agilizar tu negocio? Solicita una demostración o contacta para personalizar tu propio Timely.",
 		form: {
-			name: "Juan Pérez",
-			email: "DIRECCIÓN DE EMAIL",
+			name: "Nombre completo",
+			email: "Dirección de correo",
 			emailPlaceholder: "info@miempresa.com",
-			message: "MENSAJE",
-			messagePlaceholder: "¿Cómo podemos ayudarte?",
+			message: "Mensaje",
+			messagePlaceholder: "¿Cómo puede Timely ayudarte?",
 			submit: "Enviar Mensaje",
-		},
-		info: {
-			email: "contacto@timelyapp.com",
-			phone: "+34 943 123 4567",
 		},
 	},
 	footer: {

@@ -79,18 +79,14 @@ export const en: Translations = {
 	contact: {
 		title: "Get in Touch",
 		subtitle:
-			"Ready to streamline your business? Request a demo or download the app today. Our team is here to help you get started.",
+			"Ready to streamline your business? Request a demo or contact to get your custom Timely.",
 		form: {
-			name: "John Doe",
-			email: "EMAIL ADDRESS",
+			name: "Full name",
+			email: "Email Address",
 			emailPlaceholder: "info@mycompany.com",
-			message: "MESSAGE",
-			messagePlaceholder: "How can we help you?",
+			message: "Message",
+			messagePlaceholder: "How can Timely help you?",
 			submit: "Send Message",
-		},
-		info: {
-			email: "contact@timelyapp.com",
-			phone: "+1 (343) 123-4567",
 		},
 	},
 	footer: {

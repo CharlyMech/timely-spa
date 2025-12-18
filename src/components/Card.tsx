@@ -6,6 +6,7 @@ interface CardProps {
 	children: ReactNode;
 	variant?: CardVariant;
 	icon?: ReactNode;
+	padding?: string;
 	className?: string;
 	hoverEffect?: boolean;
 	animationDelay?: number;
@@ -17,6 +18,7 @@ export default function Card({
 	children,
 	variant = 'simple',
 	icon,
+	padding = 'p-8',
 	className = '',
 	hoverEffect = true,
 	animationDelay = 0,
@@ -28,7 +30,7 @@ export default function Card({
 			? 'bg-background dark:bg-background-dark'
 			: 'bg-surface dark:bg-surface-dark';
 
-	const baseClasses = `relative h-full p-8 rounded-3xl ${bgClasses} border border-outline/20`;
+	const baseClasses = `relative h-full ${padding} rounded-3xl ${bgClasses} border border-outline/20`;
 
 	const hoverClasses = hoverEffect
 		? 'transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:border-primary/50'
