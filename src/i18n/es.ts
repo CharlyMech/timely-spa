@@ -102,7 +102,8 @@ export const es = {
 		downloadDemo: "Descargar demo",
 		comingSoon: "Próximamente",
 		actionTitle: "¿Quieres ver Timely en acción?",
-		actionDescription: "Contacta para una demo en vivo y una toma de requisitos personalizada. Timely se adapta a tu empresa para crear una solución hecha a medida.",
+		actionDescription:
+			"Contacta para una demo en vivo y una toma de requisitos personalizada. Timely se adapta a tu empresa para crear una solución hecha a medida.",
 		actionButton: "Contacta para una demo",
 	},
 	footer: {
@@ -110,7 +111,7 @@ export const es = {
 		features: "Características",
 		privacy: "Política de Privacidad",
 		terms: "Términos",
-		tagline: "Transformando la gestión del tiempo para PYMEs modernas.",
+		tagline: "Transformando el registro horario para PYMEs modernas.",
 		copyright: "Todos los derechos reservados.",
 	},
 	theme: {

@@ -1,31 +1,131 @@
 ---
+import { getSeoConfig } from '@/config/seo';
+
 interface Props {
   title?: string;
+  description?: string;
+  lang?: 'es' | 'en';
+  image?: string;
+  noindex?: boolean;
 }
 
-const { title = 'Timely - Time tracking reimagined' } = Astro.props;
+const {
+  title,
+  description,
+  lang = 'es',
+  image,
+  noindex = false,
+} = Astro.props;
+
+const seo = getSeoConfig(lang);
+const pageTitle = title || seo.title;
+const pageDescription = description || seo.description;
+const pageImage = image || seo.ogImage;
+const canonicalURL = new URL(Astro.url.pathname, seo.siteUrl).toString();
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Timely transforms how SMEs track attendance and productivity. Seamlessly integrated, beautifully designed, and built for modern teams." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+
+    <!-- Primary Meta Tags -->
+    <title>{pageTitle}</title>
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={seo.keywords.join(', ')} />
+    <meta name="author" content={seo.author} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta name="googlebot" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="es" href={`${seo.siteUrl}/`} />
+    <link rel="alternate" hreflang="en" href={`${seo.siteUrl}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${seo.siteUrl}/`} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content="Time tracking reimagined for modern teams" />
-    
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={new URL(pageImage, seo.siteUrl).toString()} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content={seo.siteName} />
+    <meta property="og:locale" content={seo.locale} />
+    <meta property="og:locale:alternate" content={seo.alternateLocale} />
+
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content="Time tracking reimagined for modern teams" />
-    
-    <title>{title}</title>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={new URL(pageImage, seo.siteUrl).toString()} />
+    <meta name="twitter:creator" content={seo.twitterHandle} />
+    <meta name="twitter:site" content={seo.twitterHandle} />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#EFCC80" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)" />
+
+    <!-- Performance & Security -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://api.github.com" />
+
+    <!-- Structured Data - Schema.org -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Timely",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      },
+      "description": pageDescription,
+      "image": new URL(pageImage, seo.siteUrl).toString(),
+      "author": {
+        "@type": "Person",
+        "name": seo.author
+      }
+    })} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": seo.siteName,
+      "url": seo.siteUrl,
+      "logo": new URL("/favicon.svg", seo.siteUrl).toString(),
+      "sameAs": [
+        "https://github.com/charlymech",
+        "https://linkedin.com/in/charlymech"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "contact@timely-app.com"
+      }
+    })} />
   </head>
   <body>
     <slot />

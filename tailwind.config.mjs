@@ -29,22 +29,6 @@ export default {
           DEFAULT: '#333333',
           dark: '#E6E7EB',
         },
-        // success: {
-        //   DEFAULT: '#46B56C',
-        //   dark: '#5CD682',
-        // },
-        // error: {
-        //   DEFAULT: '#D64C4C',
-        //   dark: '#FF6B6B',
-        // },
-        // 'on-error': {
-        //   DEFAULT: '#FFFFFF',
-        //   dark: '#1A1A1A',
-        // },
-        // warning: {
-        //   DEFAULT: '#FFAB2E',
-        //   dark: '#FFC04D',
-        // },
         inactive: {
           DEFAULT: '#D0D0D0',
           dark: '#404040',

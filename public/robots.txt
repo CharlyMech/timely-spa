@@ -1,0 +1,17 @@
+# Timely - Robots.txt
+# https://timely.charlymech.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://timely.charlymech.com/sitemap-index.xml
+
+# Block API routes from crawling
+Disallow: /api/
+
+# Block admin or internal routes (if any in the future)
+Disallow: /admin/
+
+# Crawl-delay for respectful crawling (optional)
+Crawl-delay: 0

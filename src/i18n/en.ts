@@ -105,7 +105,8 @@ export const en: Translations = {
 		downloadDemo: "Download demo",
 		comingSoon: "Coming Soon",
 		actionTitle: "Want to see Timely in action?",
-		actionDescription: "Contact for a live demo and personalized requirements gathering. Timely adapts to your business to create a tailor-made solution.",
+		actionDescription:
+			"Contact for a live demo and personalized requirements gathering. Timely adapts to your business to create a tailor-made solution.",
 		actionButton: "Contact for a Demo",
 	},
 	footer: {
@@ -113,7 +114,7 @@ export const en: Translations = {
 		features: "Features",
 		privacy: "Privacy Policy",
 		terms: "Terms",
-		tagline: "Transforming time management for modern SMEs.",
+		tagline: "Transforming time tracking for modern SMEs.",
 		copyright: "All rights reserved.",
 	},
 	theme: {
