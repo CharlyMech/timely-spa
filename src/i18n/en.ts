@@ -10,12 +10,12 @@ export const en: Translations = {
 	},
 	hero: {
 		title: "Time tracking",
-		titleHighlight: "reimagined",
+		titleHighlight: "simplified",
 		subtitle:
-			"Timely offers SMEs a flexible and personalized time tracking system, tailored to each company and ready to run effortlessly.",
+			"Timely is the simplest and most flexible way to comply with company's time tracking. Designed for SMEs that want accurate clock-ins without unnecessary costs or complications.",
 		cta: {
-			download: "Download Demo",
-			demo: "Schedule a Demo",
+			download: "Download App",
+			demo: "Schedule Demo",
 		},
 		stats: {
 			teams: "Professional teams",
@@ -25,25 +25,26 @@ export const en: Translations = {
 		title: "Why choose",
 		titleHighlight: "Timely?",
 		subtitle:
-			"Traditional time cards and spreadsheets are prone to errors. Timely brings accuracy, style, and ease to time tracking with just a few clicks.",
+			"Because time tracking shouldn’t be another problem in your business. Timely removes complexity and focuses on what matters: clear, fast, and reliable work time records.",
 		items: {
+			simplicity: {
+				title: "Simplicity first",
+				description:
+					"A system designed for the daily reality of SMEs. A shared device, visible users, and a clear flow to start and end the workday in just a few clicks—no training required, no mistakes.",
+			},
 			security: {
-				title: "Reliable Security",
+				title: "Secure and compliant data",
 				description:
-					"Biometric authentication and OTP encryption ensure the right person clocks in at the right time.",
+					"Work time records are stored securely and in an orderly manner, ready to be reviewed or presented during a labor inspection. Transparency, data integrity, and peace of mind for your business.",
 			},
-			insights: {
-				title: "Real-time Insights",
+			customization: {
+				title: "Tailored to your business",
 				description:
-					"Live dashboards show who is working, usage analysis, and instant overtime calculations. Make decisions based on real data.",
-			},
-			sync: {
-				title: "Cloud Sync",
-				description:
-					"Data is safely stored in the cloud. Access your company data from anywhere, on any device, with automatic backups.",
+					"Every company works differently. Timely adapts to your schedules, rules, and specific needs without forcing you to change how you operate.",
 			},
 		},
 	},
+
 	tech: {
 		title: "Built with Modern",
 		titleHighlight: "Technologies",
@@ -80,21 +81,40 @@ export const en: Translations = {
 		title: "Get in Touch",
 		subtitle:
 			"Ready to streamline your business? Request a demo or contact to get your custom Timely.",
+		findMeOn: "Find me on",
+		portfolio: "Portfolio",
+		loadingProfile: "Loading profile...",
+		errorLoadingProfile: "Error loading profile",
 		form: {
 			name: "Full name",
+			namePlaceholder: "John Doe",
 			email: "Email Address",
 			emailPlaceholder: "info@mycompany.com",
 			message: "Message",
 			messagePlaceholder: "How can Timely help you?",
 			submit: "Send Message",
+			sending: "Sending...",
 		},
+		messages: {
+			success: "Message sent successfully! We will respond soon.",
+			error: "Error sending message. Please try again.",
+			connectionError: "Connection error. Please try again later.",
+		},
+	},
+	download: {
+		downloadDemo: "Download demo",
+		comingSoon: "Coming Soon",
+		actionTitle: "Want to see Timely in action?",
+		actionDescription: "Contact for a live demo and personalized requirements gathering. Timely adapts to your business to create a tailor-made solution.",
+		actionButton: "Contact for a Demo",
 	},
 	footer: {
 		about: "About",
 		features: "Features",
 		privacy: "Privacy Policy",
 		terms: "Terms",
-		copyright: "© 2025 Timely App. All rights reserved.",
+		tagline: "Transforming time management for modern SMEs.",
+		copyright: "All rights reserved.",
 	},
 	theme: {
 		light: "Light Mode",

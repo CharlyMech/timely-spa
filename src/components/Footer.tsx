@@ -26,9 +26,7 @@ export default function Footer() {
 						<span className="text-xl font-display font-bold">Timely</span>
 					</a>
 					<p className="text-sm text-on-background/60 dark:text-on-background-dark/60 max-w-md">
-						{language === 'es'
-							? 'Transformando la gestión del tiempo para PYMEs modernas.'
-							: 'Transforming time management for modern SMEs.'}
+						{t.footer.tagline}
 					</p>
 				</div>
 
@@ -37,9 +35,7 @@ export default function Footer() {
 					<div className="flex flex-col md:flex-row justify-center items-center">
 						<p className="text-sm text-on-background/60 dark:text-on-background-dark/60 text-center">
 							© {currentYear} Carlos Sánchez Recio (@CharlyMech).{' '}
-							{language === 'es'
-								? 'Todos los derechos reservados.'
-								: 'All rights reserved.'}
+							{t.footer.copyright}
 						</p>
 					</div>
 				</div>

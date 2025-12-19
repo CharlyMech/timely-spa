@@ -17,11 +17,11 @@ export default function NavBar() {
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4`}
+			className={`fixed top-0 left-0 right-0 z-50  py-4`}
 		>
 			<div className="container-custom">
 				<div
-					className={`relative transition-all duration-500 rounded-full ${theme === 'dark' ? 'glass-dark shadow-2xl' : 'glass shadow-lg'}`}
+					className={`relative rounded-full ${theme === 'dark' ? 'glass-dark shadow-2xl' : 'glass shadow-lg'}`}
 				>
 					<div className="flex items-center justify-between px-6 py-3">
 						<a
@@ -54,7 +54,7 @@ export default function NavBar() {
 									className="text-sm font-medium transition-colors duration-300 hover:text-primary relative group"
 								>
 									{item.label}
-									<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+									<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-[width] duration-300 group-hover:w-full" />
 								</a>
 							))}
 						</div>
@@ -66,7 +66,7 @@ export default function NavBar() {
 									<button
 										key={lang.code}
 										onClick={() => setLanguage(lang.code as Language)}
-										className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-300 ${language === lang.code
+										className={`px-3 py-1.5 text-xs font-medium rounded-full transition-[transform,box-shadow,background-color] duration-300 ${language === lang.code
 											? 'bg-primary text-on-primary shadow-md'
 											: 'text-on-surface dark:text-on-surface-dark hover:bg-primary/10'
 											}`}
@@ -78,7 +78,7 @@ export default function NavBar() {
 
 							<button
 								onClick={toggleTheme}
-								className="p-2.5 rounded-full hover:bg-outline/40 dark:hover:bg-outline-dark/40 transition-all duration-300 group"
+								className="p-2.5 rounded-full hover:bg-outline/40 dark:hover:bg-outline-dark/40 transition-[transform,background-color] duration-300 group"
 								aria-label="Toggle theme"
 							>
 								{theme === 'light' ? (
@@ -91,7 +91,7 @@ export default function NavBar() {
 							{/* Mobile Menu Button */}
 							<button
 								onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-								className="md:hidden p-2.5 rounded-full bg-surface dark:bg-surface-dark hover:bg-primary/10 transition-all duration-300"
+								className="md:hidden p-2.5 rounded-full bg-surface dark:bg-surface-dark hover:bg-primary/10 transition-[transform,background-color] duration-300"
 								aria-label="Toggle menu"
 							>
 								{isMobileMenuOpen ? (
@@ -105,7 +105,7 @@ export default function NavBar() {
 
 					{/* Mobile Menu */}
 					{isMobileMenuOpen && (
-						<div className="md:hidden absolute top-full left-0 right-0 mt-2 glass dark:glass-dark rounded-3xl p-6 space-y-4 animate-slide-up">
+						<div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-surface dark:bg-surface-dark shadow-lg dark:shadow-2xl rounded-3xl p-6 space-y-4 animate-slide-up">
 							{navItems.map((item) => (
 								<a
 									key={item.href}
@@ -122,7 +122,7 @@ export default function NavBar() {
 										<button
 											key={lang.code}
 											onClick={() => setLanguage(lang.code as Language)}
-											className={`px-4 py-2 text-xs font-medium rounded-full transition-all duration-300 ${language === lang.code
+											className={`px-4 py-2 text-xs font-medium rounded-full transition-[transform,background-color] duration-300 ${language === lang.code
 												? 'bg-primary text-on-primary'
 												: 'bg-surface dark:bg-surface-dark'
 												}`}

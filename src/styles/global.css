@@ -16,7 +16,7 @@
 
 	body {
 		@apply bg-background text-on-background font-sans antialiased;
-		transition: background-color 0.3s ease, color 0.3s ease;
+		transition: background-color 0.15s ease;
 	}
 }
 
@@ -25,11 +25,13 @@
 	.glass {
 		@apply backdrop-blur-xl bg-surface/90 border border-outline/30;
 		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+		transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 	}
 
 	.glass-dark {
 		@apply backdrop-blur-xl bg-surface-dark/90 border border-outline-dark/50;
 		box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+		transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 	}
 
 	/* Gradient text */
@@ -51,11 +53,11 @@
 
 	/* Button styles */
 	.btn-primary {
-		@apply bg-primary text-on-primary px-6 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg;
+		@apply bg-primary text-on-primary px-6 py-3 rounded-full font-medium transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-lg;
 	}
 
 	.btn-outline {
-		@apply border-2 border-primary text-primary px-6 py-3 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary;
+		@apply border-2 border-primary text-primary px-6 py-3 rounded-full font-medium transition-[background-color,transform] duration-300 hover:bg-primary hover:text-on-primary;
 	}
 
 	/* Section spacing */

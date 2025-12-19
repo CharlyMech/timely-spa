@@ -23,7 +23,6 @@ export default function Hero() {
 				<div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16 items-center">
 					{/* Left Content */}
 					<div className="space-y-6 md:space-y-8 animate-fade-in">
-						{/* Title */}
 						<div className="space-y-4">
 							<h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight animate-slide-up">
 								{t.hero.title}
@@ -43,7 +42,7 @@ export default function Hero() {
 							<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-up animation-delay-400">
 								<a
 									href="#download"
-									className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-on-primary rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
+									className="group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-on-primary rounded-full font-medium transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
 								>
 									<span className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-primary bg-[length:200%_100%] animate-[gradient-shift_3s_ease_infinite] opacity-0 group-hover:opacity-100 transition-opacity" />
 									<span className="relative flex items-center space-x-2">
@@ -53,7 +52,7 @@ export default function Hero() {
 								</a>
 								<a
 									href="#features"
-									className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
+									className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-[background-color,transform] duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 								>
 									<CalendarCheck className="w-5 h-5" />
 									<span>{t.hero.cta.demo}</span>
@@ -64,15 +63,14 @@ export default function Hero() {
 
 					{/* Right Content - Mockup */}
 					<div className="relative animate-scale-in animation-delay-400 py-8 md:py-0">
-						{/* Floating decoration elements - Subtle in light mode */}
+						{/* Floating decoration elements */}
 						<div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/35 dark:bg-primary/20 rounded-full blur-2xl animate-float" />
 						<div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/35 dark:bg-primary/20 rounded-full blur-2xl animate-float animation-delay-600" />
 
 						{/* Main mockup container */}
 						<div className="relative z-10 flex items-center justify-center">
-							{/* Responsive wrapper with scaling */}
 							<div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[480px] xl:max-w-[580px] mx-auto">
-								{/* Glow effect - Subtle in light mode */}
+								{/* Glow effect */}
 								<div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-primary/40 to-primary/50 dark:from-primary/30 dark:via-primary/25 dark:to-primary/30 blur-3xl animate-glow" />
 								{/* Hero phones */}
 								<img
@@ -90,7 +88,7 @@ export default function Hero() {
 						</div>
 					</div>
 
-					{/* CTAs - Mobile/Tablet Only (appears below image) */}
+					{/* CTAs - Mobile/Tablet Only */}
 					<div className="lg:hidden flex flex-col gap-3 animate-fade-in animation-delay-600">
 						<div className="inline-flex w-fit">
 							<VersionBadge />
@@ -98,7 +96,7 @@ export default function Hero() {
 						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
 							<a
 								href="#download"
-								className="flex-1 group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-on-primary rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
+								className="flex-1 group relative inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-primary text-on-primary rounded-full font-medium transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
 							>
 								<span className="absolute inset-0 bg-gradient-to-r from-primary via-primary to-primary bg-[length:200%_100%] animate-[gradient-shift_3s_ease_infinite] opacity-0 group-hover:opacity-100 transition-opacity" />
 								<span className="relative flex items-center space-x-2">
@@ -108,9 +106,10 @@ export default function Hero() {
 							</a>
 							<a
 								href="#features"
-								className="flex-1 inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
+								className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-[background-color,transform] duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 							>
-								{t.hero.cta.demo}
+								<CalendarCheck className="w-5 h-5" />
+								<span>{t.hero.cta.demo}</span>
 							</a>
 						</div>
 					</div>

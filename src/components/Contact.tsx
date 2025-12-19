@@ -51,6 +51,7 @@ export default function Contact() {
 		fetchGitHubProfile();
 	}, []);
 
+	// Contact Form State
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -81,10 +82,7 @@ export default function Contact() {
 			if (response.ok && data.success) {
 				setSubmitStatus({
 					type: 'success',
-					message:
-						language === 'es'
-							? '¡Mensaje enviado con éxito! Te responderemos pronto.'
-							: 'Message sent successfully! We will respond soon.',
+					message: t.contact.messages.success,
 				});
 				// Reset form
 				setFormData({ name: '', email: '', message: '' });
@@ -96,20 +94,13 @@ export default function Contact() {
 			} else {
 				setSubmitStatus({
 					type: 'error',
-					message:
-						data.error ||
-						(language === 'es'
-							? 'Error al enviar el mensaje. Inténtalo de nuevo.'
-							: 'Error sending message. Please try again.'),
+					message: data.error || t.contact.messages.error,
 				});
 			}
 		} catch (error) {
 			setSubmitStatus({
 				type: 'error',
-				message:
-					language === 'es'
-						? 'Error de conexión. Por favor, inténtalo más tarde.'
-						: 'Connection error. Please try again later.',
+				message: t.contact.messages.connectionError,
 			});
 		} finally {
 			setIsSubmitting(false);
@@ -118,7 +109,6 @@ export default function Contact() {
 
 	return (
 		<section id="contact" className="section-padding relative overflow-hidden bg-surface dark:bg-surface-dark">
-			{/* Background decoration */}
 			<div className="absolute inset-0 opacity-5">
 				<div
 					className="absolute inset-0"
@@ -151,13 +141,13 @@ export default function Contact() {
 											<div className="flex flex-col items-center space-y-4">
 												<Loader2 className="w-12 h-12 animate-spin text-on-primary/50" />
 												<p className="text-sm text-on-primary/70">
-													{language === 'es' ? 'Cargando perfil...' : 'Loading profile...'}
+													{t.contact.loadingProfile}
 												</p>
 											</div>
 										) : profileError ? (
 											<div className="flex flex-col items-center space-y-4">
 												<p className="text-sm text-on-primary/70">
-													{language === 'es' ? 'Error al cargar el perfil' : 'Error loading profile'}
+													{t.contact.errorLoadingProfile}
 												</p>
 											</div>
 										) : githubProfile ? (
@@ -190,7 +180,7 @@ export default function Contact() {
 
 										<div className="w-full">
 											<h3 className="text-xs font-display font-bold mb-4 text-on-primary uppercase tracking-wider">
-												{language === 'es' ? 'Encuéntrame en' : 'Find me on'}
+												{t.contact.findMeOn}
 											</h3>
 
 											<div className="flex gap-3 max-w-md w-full mx-auto">
@@ -198,37 +188,33 @@ export default function Contact() {
 													href="https://github.com/charlymech"
 													target="_blank"
 													rel="noopener noreferrer"
-													className="flex-1 flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
+													className="flex-1 flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-[background-color,transform] duration-300"
 												>
 													<FaGithub className="w-5 h-5 text-on-primary" />
 													<span className="text-xs font-medium text-on-primary">
 														GitHub
 													</span>
 												</a>
-
-												{/* LinkedIn */}
 												<a
 													href="https://linkedin.com/in/charlymech"
 													target="_blank"
 													rel="noopener noreferrer"
-													className="flex-1 flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
+													className="flex-1 flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-[background-color,transform] duration-300"
 												>
 													<FaLinkedin className="w-5 h-5 text-on-primary" />
 													<span className="text-xs font-medium text-on-primary">
 														LinkedIn
 													</span>
 												</a>
-
-												{/* Portfolio */}
 												<a
 													href="https://charlymech.com"
 													target="_blank"
 													rel="noopener noreferrer"
-													className="flex-1 flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
+													className="flex-1 flex flex-col items-center justify-center gap-2 p-3 rounded-xl bg-white/10 hover:bg-white/20 transition-[background-color,transform] duration-300"
 												>
 													<HiGlobeAlt className="w-5 h-5 text-on-primary" />
 													<span className="text-xs font-medium text-on-primary">
-														{language === 'es' ? 'Portfolio' : 'Portfolio'}
+														{t.contact.portfolio}
 													</span>
 												</a>
 											</div>
@@ -236,10 +222,9 @@ export default function Contact() {
 									</div>
 								</div>
 
-								{/* Right Section - Contact Form - Order 1 on mobile, 2 on desktop */}
+								{/* Right Section */}
 								<div className="lg:col-span-3 p-8 order-1 lg:order-2">
 									<form onSubmit={handleSubmit} className="space-y-6 h-full flex flex-col">
-										{/* Name Field */}
 										<div>
 											<label className="block text-sm font-medium mb-2 text-on-surface dark:text-on-surface-dark">
 												{t.contact.form.name}
@@ -251,13 +236,11 @@ export default function Contact() {
 												maxLength={100}
 												value={formData.name}
 												onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-												placeholder={language === 'es' ? 'Juan Pérez' : 'John Doe'}
-												className="w-full px-4 py-3 rounded-2xl bg-surface dark:bg-surface-dark border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+												placeholder={t.contact.form.namePlaceholder}
+												className="w-full px-4 py-3 rounded-2xl bg-surface dark:bg-surface-dark border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-[border-color,box-shadow,background-color] duration-[300ms,300ms,150ms]"
 												disabled={isSubmitting}
 											/>
 										</div>
-
-										{/* Email Field */}
 										<div>
 											<label className="block text-sm font-medium mb-2 text-on-surface dark:text-on-surface-dark">
 												{t.contact.form.email}
@@ -269,12 +252,10 @@ export default function Contact() {
 												value={formData.email}
 												onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 												placeholder={t.contact.form.emailPlaceholder}
-												className="w-full px-4 py-3 rounded-2xl bg-surface dark:bg-surface-dark border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+												className="w-full px-4 py-3 rounded-2xl bg-surface dark:bg-surface-dark border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-[border-color,box-shadow,background-color] duration-[300ms,300ms,150ms]"
 												disabled={isSubmitting}
 											/>
 										</div>
-
-										{/* Message Field */}
 										<div className="flex-1 flex flex-col">
 											<label className="block text-sm font-medium mb-2 text-on-surface dark:text-on-surface-dark">
 												{t.contact.form.message}
@@ -287,15 +268,13 @@ export default function Contact() {
 												onChange={(e) => setFormData({ ...formData, message: e.target.value })}
 												placeholder={t.contact.form.messagePlaceholder}
 												rows={6}
-												className="w-full flex-1 px-4 py-3 rounded-2xl bg-surface dark:bg-surface-dark border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+												className="w-full flex-1 px-4 py-3 rounded-2xl bg-surface dark:bg-surface-dark border border-outline/20 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-[border-color,box-shadow,background-color] duration-[300ms,300ms,150ms] resize-none"
 												disabled={isSubmitting}
 											/>
 											<p className="text-xs text-on-surface/50 dark:text-on-surface-dark/50 mt-2">
 												{formData.message.length}/1000
 											</p>
 										</div>
-
-										{/* Status Message */}
 										{submitStatus.type && (
 											<div
 												className={`p-4 rounded-2xl ${submitStatus.type === 'success'
@@ -306,19 +285,17 @@ export default function Contact() {
 												<p className="text-sm font-medium">{submitStatus.message}</p>
 											</div>
 										)}
-
-										{/* Submit Button */}
 										<button
 											type="submit"
 											disabled={isSubmitting}
-											className="w-full group relative inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+											className="w-full group relative inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary rounded-full font-medium transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-xl overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
 										>
 											<span className="absolute inset-0 bg-gradient-to-r from-primary via-warning to-primary bg-[length:200%_100%] animate-[gradient-shift_3s_ease_infinite] opacity-0 group-hover:opacity-100 transition-opacity" />
 											<span className="relative flex items-center justify-center space-x-2">
 												{isSubmitting ? (
 													<>
 														<Loader2 className="w-5 h-5 animate-spin" />
-														<span>{language === 'es' ? 'Enviando...' : 'Sending...'}</span>
+														<span>{t.contact.form.sending}</span>
 													</>
 												) : (
 													<>

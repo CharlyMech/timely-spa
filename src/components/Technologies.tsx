@@ -27,18 +27,6 @@ export default function Technologies() {
 
 	return (
 		<section className="section-padding relative overflow-hidden bg-surface dark:bg-surface-dark">
-			{/* Grid pattern background */}
-			<div className="absolute inset-0 opacity-5">
-				<div
-					className="absolute inset-0"
-					style={{
-						backgroundImage: `linear-gradient(#EFCC80 1px, transparent 1px),
-                             linear-gradient(90deg, #EFCC80 1px, transparent 1px)`,
-						backgroundSize: '50px 50px',
-					}}
-				/>
-			</div>
-
 			<div className="container-custom relative z-10">
 				{/* Section Header */}
 				<div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -59,15 +47,10 @@ export default function Technologies() {
 							backgroundColor="background"
 						>
 							<div className="space-y-4">
-								{/* Small decorative line */}
 								<div className="w-12 h-1 bg-primary rounded-full" />
-
-								{/* Title */}
 								<h3 className="text-2xl font-display font-bold text-on-background dark:text-on-background-dark">
 									{item.title}
 								</h3>
-
-								{/* Description */}
 								<p className="text-on-background/70 dark:text-on-background-dark/70 leading-relaxed">
 									{item.description}
 								</p>

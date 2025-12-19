@@ -26,7 +26,7 @@ export default function Download() {
 				</svg>
 			),
 			available: true,
-			downloadUrl: '#', // TODO: Add actual download link
+			downloadUrl: 'https://appdistribution.firebase.dev/i/25ee499a23fc817a', // TODO: Add actual download link
 		},
 	];
 
@@ -39,7 +39,6 @@ export default function Download() {
 			</div>
 
 			<div className="container-custom relative z-10">
-				{/* Section Header */}
 				<div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
 					<h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold">
 						<span className="gradient-text">{t.devices.titleHighlight}</span>
@@ -49,8 +48,6 @@ export default function Download() {
 						{t.devices.subtitle}
 					</p>
 				</div>
-
-				{/* Platforms Grid */}
 				<div className="flex flex-col md:flex-row gap-6 mb-16 w-full px-6 md:px-0 md:max-w-2xl md:mx-auto">
 					{platforms.map((platform, index) => (
 						<Card
@@ -66,7 +63,6 @@ export default function Download() {
 								}`}
 						>
 							<div className="flex flex-col h-full space-y-4">
-								{/* Name with availability indicator */}
 								<div className="flex items-center space-x-2">
 									<h3
 										className={`text-xl font-display font-bold ${platform.available
@@ -83,11 +79,7 @@ export default function Download() {
 										</span>
 									)}
 								</div>
-
-								{/* Spacer to push button to bottom */}
 								<div className="flex-grow" />
-
-								{/* Status label or Download link */}
 								{platform.available ? (
 									<a
 										href={platform.downloadUrl}
@@ -95,13 +87,13 @@ export default function Download() {
 										rel="noopener noreferrer"
 										className="w-full inline-flex items-center justify-end space-x-2 text-primary hover:text-primary/80 transition-colors duration-200 font-medium group"
 									>
-										<span>{language === 'es' ? 'Descargar demo' : 'Download demo'}</span>
+										<span>{t.download.downloadDemo}</span>
 										<ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
 									</a>
 								) : (
 									<span className="w-full inline-flex items-center justify-center space-x-1.5 text-sm text-inactive">
 										<span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-inactive" />
-										<span>{language === 'es' ? 'Próximamente' : 'Coming Soon'}</span>
+										<span>{t.download.comingSoon}</span>
 									</span>
 								)}
 							</div>
@@ -113,24 +105,18 @@ export default function Download() {
 				<div className="max-w-2xl mx-auto text-center space-y-8">
 					<div className="glass dark:glass-dark rounded-3xl p-8 md:p-12 space-y-6">
 						<h3 className="text-3xl md:text-4xl font-display font-bold">
-							{language === 'es'
-								? '¿Quieres ver Timely en acción?'
-								: 'Want to see Timely in action?'}
+							{t.download.actionTitle}
 						</h3>
 						<p className="text-lg text-on-background/70 dark:text-on-background-dark/70">
-							{language === 'es'
-								? 'Contacta para una demo en vivo y una toma de requisitos personalizada. Timely se adapta a tu empresa para crear una solución hecha a medida.'
-								: "Contact for a live demo and personalized requirements gathering. Timely adapts to your business to create a tailor-made solution."}
+							{t.download.actionDescription}
 						</p>
-
-						{/* Download buttons */}
 						<div className="flex flex-col sm:flex-row space-x-2 justify-center">
 							<a
-								href="#"
-								className="group relative inline-flex items-center justify-center gap-4 px-8 py-4 bg-primary text-on-primary rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
+								href="#contact"
+								className="group relative inline-flex items-center justify-center gap-4 px-8 py-4 bg-primary text-on-primary rounded-full font-medium transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-xl overflow-hidden"
 							>
 								<CalendarCheck className="w-5 h-5" />
-								<span>{language === 'es' ? 'Contacta para una demo' : 'Contact for a Demo'}</span>
+								<span>{t.download.actionButton}</span>
 							</a>
 						</div>
 					</div>
