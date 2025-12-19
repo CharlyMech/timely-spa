@@ -6,7 +6,7 @@ import Features from "../components/Features";
 import Technologies from "../components/Technologies";
 import Download from "../components/Download";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer";
 import ThemeInitializer from "../components/ThemeInitializer";
 import "../styles/global.css";
 ---
@@ -21,5 +21,5 @@ import "../styles/global.css";
 		<Download client:load />
 		<Contact client:load />
 	</main>
-	<Footer />
+	<Footer client:load />
 </Layout>
