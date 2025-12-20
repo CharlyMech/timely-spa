@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useAppStore } from '@/store/appStore';
 import { getTranslations, languages, type Language } from '@/i18n';
 import { Moon, Sun, Menu, X } from 'lucide-react';
@@ -6,7 +6,24 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 export default function NavBar() {
 	const { theme, language, toggleTheme, setLanguage } = useAppStore();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const mobileMenuRef = useRef<HTMLDivElement>(null);
 	const t = getTranslations(language);
+
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+				setIsMobileMenuOpen(false);
+			}
+		};
+
+		if (isMobileMenuOpen) {
+			document.addEventListener('mousedown', handleClickOutside);
+		}
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [isMobileMenuOpen]);
 
 	const navItems = [
 		{ label: t.nav.home, href: '#home' },
@@ -21,6 +38,7 @@ export default function NavBar() {
 		>
 			<div className="container-custom">
 				<div
+					ref={mobileMenuRef}
 					className={`relative rounded-full ${theme === 'dark' ? 'glass-dark shadow-2xl' : 'glass shadow-lg'}`}
 				>
 					<div className="flex items-center justify-between px-6 py-3">

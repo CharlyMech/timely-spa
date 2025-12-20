@@ -12,7 +12,7 @@ export const es = {
 		subtitle:
 			"Timely es la forma más simple y flexible de cumplir con el registro horario. Diseñado para PYMEs que quieren fichar sin errores, sin costes innecesarios y sin complicaciones.",
 		cta: {
-			download: "Descargar Ap",
+			download: "Descargar App",
 			demo: "Agendar Demo",
 		},
 		stats: {

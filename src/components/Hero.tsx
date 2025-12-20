@@ -10,7 +10,7 @@ export default function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+			className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28"
 		>
 			{/* Animated Background - Balanced intensity */}
 			<div className="absolute inset-0 -z-10">
@@ -51,7 +51,7 @@ export default function Hero() {
 									</span>
 								</a>
 								<a
-									href="#features"
+									href="#contact"
 									className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-[background-color,transform] duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 								>
 									<CalendarCheck className="w-5 h-5" />
@@ -105,7 +105,7 @@ export default function Hero() {
 								</span>
 							</a>
 							<a
-								href="#features"
+								href="#contact"
 								className="inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-full font-medium transition-[background-color,transform] duration-300 hover:bg-primary hover:text-on-primary hover:scale-105"
 							>
 								<CalendarCheck className="w-5 h-5" />
